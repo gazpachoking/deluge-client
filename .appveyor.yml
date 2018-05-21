@@ -1,12 +1,5 @@
 environment:
-
   matrix:
-
-    # For Python versions available on Appveyor, see
-    # http://www.appveyor.com/docs/installed-software#python
-    # The list here is complete (excluding Python 2.6, which
-    # isn't covered by this document) at the time of writing.
-
     - PYTHON: "C:\\Python27"
     - PYTHON: "C:\\Python33"
     - PYTHON: "C:\\Python34"
@@ -29,5 +22,6 @@ before_test:
 test_script:
   - "%PYTHON%\\Scripts\\nosetests.exe"
 
-on_finish:
+on_failure:
+  # Print the deluged log file to help debug problems
   - "type C:\\Users\\appveyor\\AppData\\Roaming\\deluge\\deluged.log"
