@@ -15,16 +15,17 @@ environment:
 
 install:
   - choco install deluge --version=1.3.15
+  - ps: "Start-Process \"c:\\Program Files (x86)\\Deluge\\deluged.exe\" -ArgumentList \"--loglevel DEBUG --do-not-daemonize\""
   - "%PYTHON%\\Scripts\\pip.exe install nose"
 
 build: off
 
 before_test:
   # For some reason we have to create the logfile first
-  - ps: "New-Item -Path 'C:\\Users\\appveyor\\AppData\\Roaming\\deluge' -ItemType Directory"
+  #- ps: "New-Item -Path 'C:\\Users\\appveyor\\AppData\\Roaming\\deluge' -ItemType Directory"
   #- ps: "New-Item -Path 'C:\\Users\\appveyor\\AppData\\Roaming\\deluge\\deluged.log' -ItemType File"
-  - ps: "Start-Process \"c:\\Program Files (x86)\\Deluge\\deluged.exe\" -ArgumentList \"--loglevel DEBUG\""
-  - ps: "Start-Sleep -s 10"
+
+  #- ps: "Start-Sleep -s 5"
 
 test_script:
   - "%PYTHON%\\Scripts\\nosetests.exe"
