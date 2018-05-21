@@ -26,4 +26,4 @@ before_test:
   - ps: "Start-Process -NoNewWindow \"c:\\Program Files (x86)\\Deluge\\deluged.exe\""
 
 test_script:
-  - "%PYTHON%\\Scripts\nosetests.exe"
+  - "%PYTHON%\\Scripts\\nosetests.exe"
