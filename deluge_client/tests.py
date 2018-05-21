@@ -50,6 +50,7 @@ class TestDelugeClient(TestCase):
             self.assertEqual('deluge_client.client', e.__module__)
         else:
             raise Exception('Should have received an error.')
+        assert False
 
     def test_attr_caller(self):
         self.client.connect()
