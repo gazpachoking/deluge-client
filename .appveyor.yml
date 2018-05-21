@@ -21,11 +21,10 @@ build: off
 
 before_test:
   # For some reason we have to create the logfile first
-  #- ps: "New-Item -Path 'C:\\Users\\appveyor\\AppData\\Roaming\\deluge' -ItemType Directory"
-  #- ps: "New-Item -Path 'C:\\Users\\appveyor\\AppData\\Roaming\\deluge\\deluged.log' -ItemType File"
-  - ps: "Start-Process \"c:\\Program Files (x86)\\Deluge\\deluged.exe\" -ArgumentList \"--loglevel DEBUG --do-not-daemonize\""
+  - ps: "New-Item -Path 'C:\\Users\\appveyor\\AppData\\Roaming\\deluge' -ItemType Directory"
+  - ps: "Start-Process \"c:\\Program Files (x86)\\Deluge\\deluged.exe\""
   # Give deluged a chance to start
-  - ps: "Start-Sleep -s 5"
+  - ps: "Start-Sleep -s 10"
 
 test_script:
   - "%PYTHON%\\Scripts\\nosetests.exe"
