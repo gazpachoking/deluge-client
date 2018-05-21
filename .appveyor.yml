@@ -21,7 +21,8 @@ build: off
 
 before_test:
   # For some reason we have to create the logfile first
-  - ps: "New-Item -Path 'C:\\Users\\appveyor\\AppData\\Roaming\\deluge\\deluged.log' -ItemType File"
+  - ps: "New-Item -Path 'C:\\Users\\appveyor\\AppData\\Roaming\\deluge' -ItemType Directory"
+  #- ps: "New-Item -Path 'C:\\Users\\appveyor\\AppData\\Roaming\\deluge\\deluged.log' -ItemType File"
   - "\"c:\\Program Files (x86)\\Deluge\\deluged.exe\""
 
 test_script:
