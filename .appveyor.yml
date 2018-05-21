@@ -21,7 +21,7 @@ install:
 build: off
 
 before_test:
-  - "c:\\Program Files (x86)\Deluge\deluged.exe"
+  - "c:\\Program Files (x86)\\Deluge\\deluged.exe"
 
 test_script:
   - "%PYTHON%\\Scripts\nosetests.exe"
