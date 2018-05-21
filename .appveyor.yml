@@ -7,7 +7,6 @@ environment:
     # The list here is complete (excluding Python 2.6, which
     # isn't covered by this document) at the time of writing.
 
-    - PYTHON: "C:\\Python26"
     - PYTHON: "C:\\Python27"
     - PYTHON: "C:\\Python33"
     - PYTHON: "C:\\Python34"
@@ -22,7 +21,7 @@ build: off
 
 before_test:
   # For some reason we have to create the logfile first
-  - "echo $null >> C:\\Users\\appveyor\\AppData\\Roaming\\deluge\\deluged.log"
+  - "New-Item -Path 'C:\\Users\\appveyor\\AppData\\Roaming\\deluge\\deluged.log' -ItemType File"
   - "\"c:\\Program Files (x86)\\Deluge\\deluged.exe\""
 
 test_script:
