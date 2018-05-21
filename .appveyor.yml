@@ -29,4 +29,4 @@ test_script:
   - "%PYTHON%\\Scripts\\nosetests.exe"
 
 on_finish:
-  - "type 'C:\\Users\\appveyor\\AppData\\Roaming\\deluge\\deluged.log'"
+  - "type C:\\Users\\appveyor\\AppData\\Roaming\\deluge\\deluged.log"
